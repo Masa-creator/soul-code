@@ -1,0 +1,98 @@
+:root {
+  --bg-dark: rgba(0,0,0,.55);
+  --primary: #ffd76a;
+  --text: #fff;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: #060914;
+}
+
+/* === 天の川・星空（改良版） === */
+.stars-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+  background: radial-gradient(1200px 800px at 50% 20%, rgba(20,30,60,.8), rgba(5,8,16,.98));
+}
+/* 小星・中星の二層 */
+.stars-bg:before, .stars-bg:after {
+  content: ""; position: absolute; inset: 0; background-repeat: repeat;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, #fff 70%, transparent 71%),
+    radial-gradient(1px 1px at 30% 10%, #fff 70%, transparent 71%),
+    radial-gradient(1px 1px at 70% 25%, #fff 70%, transparent 71%),
+    radial-gradient(1px 1px at 50% 60%, #fff 70%, transparent 71%),
+    radial-gradient(1px 1px at 80% 80%, #fff 70%, transparent 71%);
+  animation: twinkle 8s linear infinite;
+  opacity: .7;
+}
+.stars-bg:after { transform: scale(1.4); filter: blur(1px); opacity:.45; animation-duration: 11s; }
+/* 天の川帯 */
+.milkyway { position:absolute; inset:-10% -10%; background:
+  radial-gradient(60vmax 20vmax at 60% 40%, rgba(255,255,255,.08), transparent 60%),
+  radial-gradient(70vmax 25vmax at 40% 60%, rgba(255,255,255,.10), transparent 60%);
+  filter: blur(6px);
+  opacity:.9;
+  mix-blend-mode: screen;
+}
+/* 流れ星 複数 */
+.shoot { position:absolute; width:2px; height:2px; background:#fff; box-shadow:0 0 8px 2px #fff; top:10%; left:-10%; opacity:0; }
+.s1 { animation: shoot 7s linear infinite; }
+.s2 { animation: shoot 9s linear infinite 2s; }
+.s3 { animation: shoot 11s linear infinite 5s; }
+@keyframes shoot {
+  0%{ transform: translateX(0) translateY(0); opacity:0;}
+  10%{opacity:1;}
+  50%{ transform: translateX(120vw) translateY(30vh); opacity:.85;}
+  100%{opacity:0;}
+}
+@keyframes twinkle { 0%,100%{opacity:.8;} 50%{opacity:.4;} }
+
+/* === レイアウト === */
+.center { text-align: center; }
+.site-header { position: sticky; top:0; backdrop-filter: blur(8px);
+  background: rgba(0,0,0,.35); display:flex; flex-direction:column; align-items:center;
+  padding:12px 20px; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.brand { font-weight:800; letter-spacing:.08em; margin-bottom: 6px; }
+.nav a { color: var(--text); text-decoration: none; margin: 0 10px; opacity: .9; }
+
+.hero { padding: 72px 20px 24px; }
+.lead { opacity:.95; }
+
+.panel { max-width: 960px; margin: 0 auto 24px; padding: 24px;
+  background: var(--bg-dark); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+.panel.dark { background: rgba(0,0,0,.7); }
+.promo blockquote{ margin:8px auto; opacity:.95; }
+.proofs{ display:flex; flex-direction:column; gap:6px; align-items:center; }
+
+.form { display:grid; gap: 12px; grid-template-columns: 1fr; max-width: 520px; margin: 14px auto 0; justify-items:center; }
+input, button, .btn { width: 100%; padding: 12px 14px; border-radius: 10px; border: none; font-size: 16px; }
+input { background: #0e1220; color: #fff; outline: 1px solid rgba(255,255,255,.15); text-align:center; }
+input::placeholder { color: rgba(255,255,255,.6); }
+button, .btn { cursor: pointer; }
+.btn.primary { background: linear-gradient(180deg, #ffe08a, #ffbe40); color: #000; font-weight: 700; }
+.btn.ghost { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.15); }
+.btn + .btn, .btn + button { margin-top: 10px; }
+
+.result { margin-top: 18px; line-height: 1.9; font-size: 16px; text-align:center; }
+.cta-stack { max-width: 520px; margin: 18px auto 0; display:flex; flex-direction:column; align-items:center; }
+
+.plan-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; justify-items:center; }
+.plan { background: rgba(255,255,255,.06); padding: 16px; border-radius: 14px; max-width: 360px; }
+.plan.highlight { outline:2px solid var(--primary); box-shadow: 0 0 0 6px rgba(255,215,106,.1); }
+.plan h2 { margin-top: 0; }
+.mini { opacity: .8; font-size: 12px; }
+.seraphina { font-style: italic; opacity: .95; }
+
+.site-footer { text-align:center; padding: 18px; opacity: .8; }
+
+.paid-pre { text-align:left; white-space:pre-wrap; background: rgba(255,255,255,.04); padding:16px; border-radius:12px; }
+
+@media (max-width: 640px){
+  .hero { padding-top: 48px; }
+  .panel { padding: 18px; border-radius: 14px; }
+}

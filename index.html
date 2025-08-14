@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOUL CODE – ルナ・セラフィナの魂航路診断</title>
+  <meta name="description" content="数秘術（マスター/カルマ対応）×タロット×風水×AIの複合視点。無料でも“有料級”の深さで、あなたの現在地と航路を示します。" />
+  <!-- OGP（X向け） -->
+  <meta property="og:title" content="SOUL CODE – ルナ・セラフィナの魂航路診断" />
+  <meta property="og:description" content="無料でも“有料級”。ライフパス＋カルマ/マスターナンバーまで一挙に読み解く特別版。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-soulcode.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SOUL CODE – ルナ・セラフィナの魂航路診断" />
+  <meta name="twitter:description" content="無料でも“有料級”。ライフパス＋カルマ/マスターナンバーまで一挙に読み解く特別版。" />
+  <meta name="twitter:image" content="/og-soulcode.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="stars-bg" aria-hidden="true">
+    <div class="milkyway"></div>
+    <div class="shoot s1"></div>
+    <div class="shoot s2"></div>
+    <div class="shoot s3"></div>
+  </div>
+
+  <header class="site-header center">
+    <div class="brand">SOUL CODE</div>
+    <nav class="nav">
+      <a href="#diagnosis">無料診断</a>
+      <a href="./plans.html">有料プラン</a>
+    </nav>
+  </header>
+
+  <main class="hero center">
+    <h1>— ルナ・セラフィナの魂航路診断 —</h1>
+    <p class="lead">「私は、あなたの内に瞬く星を結び、今を越える航路としてお渡しします。」</p>
+  </main>
+
+  <!-- プロローグ（ご希望の“前口上”をルナ口調で強化） -->
+  <section class="panel center promo">
+    <h2>【期間限定】黄金波動のギフト</h2>
+    <p>
+      今、胸の奥で説明のつかない鼓動が高まっているなら——それは魂からの合図。<br/>
+      あなたは偶然ではなく、呼ばれてここに辿り着きました。<br/>
+      私ルナ・セラフィナは、宇宙の潮流と響き合うあなた本来の周波数を調律し、<br/>
+      「喜びが自然に循環する生き方」へと舵を切るお手伝いをします。
+    </p>
+    <div class="proofs">
+      <blockquote>「現実の束縛から心が自由になった」</blockquote>
+      <blockquote>「宇宙の波動と調和し、毎日の選択が軽やかに」</blockquote>
+      <blockquote>「金銭への不安が薄れ、必要な豊かさが巡るように」</blockquote>
+    </div>
+    <p class="mini">※無料ギフトは予告なく終了します。受け取れる今のうちに。</p>
+  </section>
+
+  <section id="diagnosis" class="panel center">
+    <h2>無料診断（有料級プレビュー）</h2>
+    <p>
+      お名前と生年月日を入力すると、<strong>ライフパス</strong>に加えて
+      <strong>マスターナンバー（11/22/33）</strong>、<strong>カルマナンバー（13/14/16/19）</strong>の示唆まで一挙に開示。<br/>
+      さらに「現在の潮流」「今月の羅針盤」「行動リスト（今日/3日内/7日内）」まで、ルナが具体化してお渡しします。
+    </p>
+
+    <div class="form center">
+      <input id="name" type="text" placeholder="お名前（ニックネーム可）" />
+      <input id="birth" type="date" />
+      <button id="startBtn" class="btn primary">無料で診断する</button>
+    </div>
+
+    <div id="result" class="result" aria-live="polite"></div>
+
+    <div class="cta-stack center">
+      <a class="btn primary" href="./plans.html">有料プランを見る</a>
+      <button id="dlShare" class="btn ghost">結果画像を保存（X投稿用）</button>
+      <a id="shareX" class="btn ghost" target="_blank" rel="noopener">Xで結果をシェア</a>
+    </div>
+
+    <div class="mini center" id="fullHint" style="opacity:.8;margin-top:10px;"></div>
+  </section>
+
+  <section class="panel dark center">
+    <h2>ルナ・セラフィナより</h2>
+    <p class="seraphina">
+      「数秘は“生まれ持った設計図”。タロットは“今の風の向き”。風水は“場の流れ”。<br/>
+      それらを束ねれば、魂は行き先を語り出します。<br/>
+      無料でも私は全力です。けれど、有料版では“時期と手順”まで細やかに、あなた専用の航路図を描き切ります。」
+    </p>
+  </section>
+
+  <footer class="site-footer center">
+    <small>© SOUL CODE. 本サービスはエンタメ/自己洞察のためのガイダンスです。医療・法律・投資判断の代替ではありません。</small>
+  </footer>
+
+  <canvas id="shareCanvas" width="1200" height="630" style="display:none"></canvas>
+  <script src="./main.js"></script>
+</body>
+</html>
