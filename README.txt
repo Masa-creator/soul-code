@@ -1,1 +1,1 @@
-SOUL CODE 完全版 - GitHub & Vercel でデプロイ可能
+SOUL CODE フル拡張版
