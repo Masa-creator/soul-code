@@ -1,1 +1,0 @@
-const paidTexts={light:'Light鑑定',premium:'Premium鑑定',platinum:'Platinum鑑定'};
