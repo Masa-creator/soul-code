@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOUL CODE — 有料プラン</title>
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css"></head>
+<body class="milkyway"><div class="container center">
+<h1 class="title">SOUL CODE</h1>
+<p class="subtitle">— 有料鑑定プラン —</p>
+<div class="panel">
+<div class="plan-grid">
+<article class="plan">
+<h2>Light（¥1,480）</h2>
+<ul><li>約300字の個別ガイダンス</li><li>金運/恋愛/仕事の優先順位</li><li>今週の開運アクション×3</li></ul>
+<a class="btn" href="./paid.html?plan=light">試し読み（紹介コードで全文解放）</a>
+<p class="mini">何が占える？：短期の指針、迷いの解像度アップ、第一歩の提示</p>
+</article>
+<article class="plan highlight">
+<h2>Premium（¥2,980）</h2>
+<ul><li>約800字の詳細リーディング</li><li>3か月運勢×行動設計</li><li>相性診断（1名）</li></ul>
+<a class="btn" href="./paid.html?plan=premium">試し読み（紹介コードで全文解放）</a>
+<p class="mini">何が占える？：中期戦略、資源の棚卸し、ブレーキの外し方</p>
+</article>
+<article class="plan">
+<h2>Platinum（¥4,980）</h2>
+<ul><li>約1500字・三部構成（過去→現在→未来）</li><li>週次の行動計画／長期指針</li><li>相性診断（無制限）＋メール鑑定1回</li></ul>
+<a class="btn" href="./paid.html?plan=platinum">試し読み（紹介コードで全文解放）</a>
+<p class="mini">何が占える？：人生テーマの統合、運命のレバレッジ、未来のコミットメント</p>
+</article>
+</div></div>
+<footer><small>© SOUL CODE</small></footer>
+</div>
+<script>
+const unlocked=localStorage.getItem('SOULCODE_UNLOCK')==='1';
+if(unlocked){document.querySelectorAll('a.btn').forEach(a=>{const u=new URL(a.href,location.href);u.searchParams.set('unlock','1');a.href=u.toString();})}
+</script>
+</body></html>
