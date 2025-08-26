@@ -1,62 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SOUL CODE – 魂の本質診断</title>
-<meta name="description" content="SOUL CODE｜数秘術 × タロット × 風水で導く、あなた専用の魂コード診断。" />
-<link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOUL CODE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="starry"></div><div class="milky"></div><div class="shooting"></div>
+  <header>
+    <h1 class="title">SOUL CODE</h1>
+    <p class="subtitle">数秘術 × タロット × 風水で導く魂の本質診断</p>
+  </header>
 
-<header class="site"><div class="brand">SOUL CODE</div><div class="subbrand">数秘術 × タロット × 風水で導く魂の本質診断</div></header>
+  <section id="hero">
+    <div class="seraphina"></div>
+    <p class="intro">案内人ルナ・セラフィナが、あなたの“今”に響く導きを差し出します。<br>
+    まずはタロットを一枚引き、数秘で深掘りし、風水で日常に落とし込みましょう。</p>
+  </section>
 
-<section class="hero">
-  <div class="seraphina" aria-hidden="true">
-    <svg viewBox="0 0 200 200" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ffd76a"/></linearGradient></defs>
-      <path fill="url(#g)" d="M100 20c18 0 33 15 33 33s-15 33-33 33-33-15-33-33 15-33 33-33zM60 110c10-12 25-18 40-18s30 6 40 18c12 14 18 33 18 60H42c0-27 6-46 18-60z" opacity="0.95"/>
-    </svg>
-  </div>
-  <h1>— SOUL CODE —</h1>
-  <p>案内人ルナ・セラフィナが、あなたの“今”に響く導きを差し出します。まずはタロットを一枚引き、数秘で深掘りし、風水で日常に落とし込みましょう。</p>
-</section>
+  <main>
+    <form id="diagnosis-form">
+      <input type="text" id="name" placeholder="名前 (例: Hanako Sato)" required>
+      <input type="date" id="birthdate" required>
+      <select id="tarot">
+        <option value="random">タロット：お任せ</option>
+        <option value="love">恋愛</option>
+        <option value="money">金運</option>
+        <option value="work">仕事</option>
+      </select>
+      <input type="text" id="refcode" placeholder="紹介コード（任意）">
+      <button type="submit">無料で診断する</button>
+    </form>
+    <div id="result"></div>
 
-<main class="panel" id="diagnosis">
-  <h2>無料診断（固定テキスト）</h2>
-  <p class="small">※ 有料レポートはAIで個別生成（1000/1500/2000字）。紹介コード保有者は一部無料で閲覧可。</p>
-  <div class="form">
-    <input id="name" type="text" placeholder="名前（例：Hanako Sato）" />
-    <input id="birth" type="date" />
-    <select id="tarotMode"><option value="auto" selected>タロット：お任せ</option><option value="upright">正位置</option><option value="reversed">逆位置</option></select>
-    <input id="ref" type="text" placeholder="紹介コード（任意）" />
-    <button id="startBtn" class="btn primary">無料で診断する</button>
-  </div>
-  <div id="result" class="result" aria-live="polite"></div>
-
-  <div class="cta-stack" id="afterCta" style="display:none">
-    <a class="btn primary" href="./plans.html" id="paidBtn">有料プランを見る</a>
-    <div class="card" style="margin-top:12px;text-align:left">
-      <strong>有料版で占えること</strong>
-      <ul class="small" style="text-align:left">
-        <li>タロット詳細（最大7枚）／運命の展開</li>
-        <li>数秘の深層（カルマ・マスター・周期）</li>
-        <li>風水アクション（方位・色・時間）</li>
-        <li>行動計画、相性、願望成就シナリオ</li>
-      </ul>
+    <div class="paid-section">
+      <button id="paid-btn">有料版を体験する</button>
+      <p class="paid-info">有料版ではタロット複数展開＋数秘の詳細分析＋風水アドバイスを<br>
+      1000字 / 1500字 / 2000字 でお届けします。</p>
     </div>
-    <div style="margin-top:12px">
-      <button id="dlShare" class="btn ghost">結果画像を保存（X投稿用）</button>
-      <a id="shareX" class="btn ghost" target="_blank" rel="noopener">Xで結果をシェア</a>
-    </div>
-  </div>
-</main>
+  </main>
 
-<section class="panel dark"><h2>ルナ・セラフィナより</h2><p class="small">「あなたの物語は、まだ第一章。カードは扉、数は羅針盤、風はあなたの追い風。さぁ一緒に進みましょう」</p></section>
-
-<footer class="site"><small>© SOUL CODE. エンタメ目的のガイダンスです。</small></footer>
-<canvas id="shareCanvas" width="1200" height="630" style="display:none"></canvas>
-<script src="./main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
