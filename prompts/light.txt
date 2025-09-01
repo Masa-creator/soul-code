@@ -1,0 +1,1 @@
+Light prompt template — replace in production
